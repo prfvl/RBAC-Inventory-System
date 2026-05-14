@@ -29,7 +29,14 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 app.use(apiLimiter);
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// ADD THIS LINE — serves uploaded images as static files
+app.use('/uploads', express.static(join(__dirname, 'uploads')));
 app.use('/api/auth', authRoutes);
 app.use('/api/inventory', inventoryRoutes);
 app.use('/api/audit', auditRoutes);

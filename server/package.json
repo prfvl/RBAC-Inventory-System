@@ -23,6 +23,8 @@
     "json2csv": "^6.0.0-alpha.2",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.6.2",
+    "muller": "^1.1.0",
+    "multer": "^2.1.1",
     "redis": "^5.12.1"
   },
   "devDependencies": {
